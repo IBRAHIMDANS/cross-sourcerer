@@ -1,0 +1,17 @@
+.app-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  padding: 3em;
+
+}
+.app-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-content {
+  padding-top: 50vh;
+}

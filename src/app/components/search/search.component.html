@@ -1,12 +1,23 @@
 <div class="app-content">
+  <mat-card class="app-form-container">
+    <mat-card-title> My sourcerer</mat-card-title>
+    <form class="app-form" (ngSubmit)="searchUser()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput [formControl]="usernameFormControl" placeholder="Ex. ibrahimdans">
+        <mat-error *ngIf="usernameFormControl.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
 
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Username</mat-label>
-      <input matInput [formControl]="usernameFormControl" placeholder="Ex. ibrahimdans">
-      <mat-error *ngIf="usernameFormControl.hasError('required')">
-        Username is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-  </form>
+      </mat-form-field>
+      <div>
+        <button *ngIf="!isLoad"  mat-button color="primary" type="submit" [disabled]="usernameFormControl.invalid">
+          Search
+        </button>
+        <mat-spinner *ngIf="isLoad" diameter="25"></mat-spinner>
+      </div>
+    </form>
+    <mat-error *ngIf="userStatus"> Username not found 😨</mat-error>
+  </mat-card>
+
 </div>
