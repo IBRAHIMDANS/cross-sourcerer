@@ -1,1 +1,12 @@
-<p>search works!</p>
+<div class="app-content">
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input matInput [formControl]="usernameFormControl" placeholder="Ex. ibrahimdans">
+      <mat-error *ngIf="usernameFormControl.hasError('required')">
+        Username is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>

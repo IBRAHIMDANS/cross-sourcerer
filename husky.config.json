@@ -1,0 +1,8 @@
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier --write \"src/*.ts\" \"src/**/*.ts*\"",
+      "pre-push": "yarn lint && yarn test"
+    }
+  }
+}
