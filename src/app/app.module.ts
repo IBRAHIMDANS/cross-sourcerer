@@ -16,12 +16,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserComponent } from './components/user/user.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderComponent } from './components/header/header.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { UserComponent } from './components/user/user.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

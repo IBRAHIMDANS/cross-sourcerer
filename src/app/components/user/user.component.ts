@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../../services/github.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  username: string;
+  user;
 
-  constructor() { }
+  constructor(private githubService: GithubService,
+              private route: ActivatedRoute,
+              private router: Router) {
+
+  }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.username = params.id;
+    });
+    this.githubService
+      .getUSer(this.username)
+      .subscribe(({ data }) => {
+        console.log(data);
+        return this.user = data;
+      }, error => {
+        console.log(error);
+      });
   }
 
 }

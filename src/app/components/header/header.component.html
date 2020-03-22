@@ -1,0 +1,49 @@
+<div class="app-header-content">
+  <div class="app-link-content">
+    <mat-card-subtitle>Share your profile on:</mat-card-subtitle>
+    <div>
+      <a href="#">LinkedIn</a> &nbsp;
+      <a href="#">Twitter</a> &nbsp;
+      <a href="#">Facebook</a> &nbsp;
+      <a href="#">Get HTML</a> &nbsp;
+    </div>
+  </div>
+  <div class="app-user-infos">
+    <mat-card-title>{{user.user.name}}</mat-card-title>
+    <div class="app-user-infos-subtitle">
+      <mat-card-subtitle>{{user.user.bio}}</mat-card-subtitle>
+      <mat-card-subtitle>{{user.user.location}}</mat-card-subtitle>
+    </div>
+  </div>
+  <div class="app-user-details">
+    <mat-card-subtitle>{{user.user.login}}</mat-card-subtitle>
+    <div class="app-user-details-subtitle">
+      <img class="avatar-img" mat-card-avatar src="{{user.user.avatarUrl}}" alt="avatar">
+      <div class="app-user-repos">
+        <mat-card class="app-user-container">
+          <mat-card-subtitle>Commits</mat-card-subtitle>
+          <mat-card-subtitle>6</mat-card-subtitle>
+        </mat-card>
+        <mat-card class="app-user-container">
+          <mat-card-subtitle>Repos</mat-card-subtitle>
+          <mat-card-subtitle>{{user.repositoryOwner.repositories?.totalCount}}</mat-card-subtitle>
+        </mat-card>
+        <mat-card class="app-user-container">
+          <mat-card-subtitle>Lines of Code</mat-card-subtitle>
+          <mat-card-subtitle>6</mat-card-subtitle>
+        </mat-card>
+        <mat-card class="app-user-container">
+          <mat-card-subtitle>Followers</mat-card-subtitle>
+          <mat-card-subtitle>{{user.user.following?.totalCount}}</mat-card-subtitle>
+        </mat-card>
+        <mat-card class="app-user-container">
+          <mat-card-subtitle>Followings</mat-card-subtitle>
+          <mat-card-subtitle>{{user.user.followers?.totalCount}}</mat-card-subtitle>
+        </mat-card>
+        <mat-card class="app-user-container">
+          <mat-card-subtitle>Refresh</mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
 
@@ -12,21 +12,82 @@ export class GithubService {
   constructor(private apollo: Apollo) {
   }
 
-  getUSer(username: string): Observable<any> {
+  userFound(username: string): Promise<boolean> {
     const query = gql`
   {
     user(login: "${username}") {
-        id
         name
-        avatarUrl
-        email
         login
     }
   }
 `;
     return this.apollo.watchQuery({
       query
-    }).valueChanges.pipe(map(result => result));
+    })
+      .valueChanges
+      .toPromise()
+      .then(() => {
+        return true;
+      })
+      .catch(() => {
+        return false;
+      });
+
+  }
+
+  getUSer(username: string): Observable<any> {
+    const query = gql`
+  {
+  user(login: "${username}") {
+    id
+    name
+    avatarUrl
+    email
+    login
+    location
+    bio
+    websiteUrl
+    company
+    following {
+      totalCount
+    }
+    followers {
+      totalCount
+    }
+  }
+  repositoryOwner(login: "${username}") {
+    repositories(first: 100) {
+      totalCount
+      edges {
+        cursor
+        node {
+          languages(first: 100) {
+            nodes {
+              color
+              name
+            }
+            totalCount
+          }
+          primaryLanguage {
+            name
+            color
+            id
+          }
+          name
+        }
+      }
+    }
+  }
+}
+
+
+`;
+    return this.apollo.watchQuery({
+      query
+    }).valueChanges
+      .pipe(
+        map(result => result)
+      );
 
   }
 }

@@ -34,11 +34,9 @@ export class SearchComponent implements OnInit {
     this.isLoad = true;
     this.githubService.getUSer(this.usernameFormControl.value).subscribe(({ data }) => {
       this.isLoad = false;
-      console.log(data);
-      return this.router.navigate(['/', 'user', data.user.login]);
+      return this.router.navigate([ 'user', data.user.login]);
     }, error => {
       this.isLoad = false;
-      console.log('error', error);
       this.userNotFound();
       return error;
     });

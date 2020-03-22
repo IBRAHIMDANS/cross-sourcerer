@@ -1,0 +1,50 @@
+.app-user-infos {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 90em;
+}
+.app-user-infos-subtitle {
+  display: flex;
+  flex-direction: column;
+}
+.app-link-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 1em 0;
+}
+.app-header-content {
+}
+.avatar-img {
+  background-size: cover;
+  border-radius: 100%;
+  width: 5vw;
+  height: 5vw;
+}
+ .app-user-details {
+   display: flex;
+   flex-direction: column;
+ }
+.app-user-details > mat-card-subtitle {
+  margin: 2em 0;
+}
+.app-container {
+  width: 5em;
+  height: 3em;
+  margin: 1em;
+}
+ .app-user-details-subtitle {
+   display: flex;
+   align-items: center;
+ }
+.app-user-container {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.app-user-repos {
+  display: flex;
+  justify-content: space-evenly;
+  width: 38vw;
+}
