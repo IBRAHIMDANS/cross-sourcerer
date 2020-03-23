@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserComponent implements OnInit {
   username: string;
   user;
+  countRepos;
 
   constructor(private githubService: GithubService,
               private route: ActivatedRoute,

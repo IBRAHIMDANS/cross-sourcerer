@@ -7,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RepositoriesComponent implements OnInit {
   @Input() repositories;
+  @Input() countRepos;
   constructor() {
   }
 
   ngOnInit(): void {
-    console.log(this.repositories);
   }
 
 }

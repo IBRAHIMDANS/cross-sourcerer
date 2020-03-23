@@ -3,10 +3,10 @@
   <!-- This fills the remaining space of the current row -->
 </mat-toolbar>
 <div class="app-main">
-  <app-header [user]="user"></app-header>
+  <app-header [user]="user" [countRepos]="countRepos"></app-header>
   <app-overview [user]="user"></app-overview>
   <app-languages [repositories]="user?.repositories"></app-languages>
   <app-technologies [user]="user"></app-technologies>
   <app-fun-facts [user]="user"></app-fun-facts>
-  <app-repositories [repositories]="user.repositories"></app-repositories>
+  <app-repositories [repositories]="user.repositories" [countRepos]="countRepos"></app-repositories>
 </div>

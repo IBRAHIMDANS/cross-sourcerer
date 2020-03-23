@@ -68,6 +68,8 @@ export class GithubService {
         cursor
         node {
           name
+          description
+          resourcePath
           languages(first: 100) {
             edges {
               node {

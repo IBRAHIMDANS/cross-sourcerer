@@ -1,11 +1,15 @@
 <div class="app-component">
   <div class="app-title">
     <mat-card-title>Repositories</mat-card-title>
+    <mat-card-subtitle>{{countRepos}}</mat-card-subtitle>
   </div>
   <div style="display: flex">
     <mat-card *ngFor="let repo of repositories?.edges">
-      <p> {{repo.node.name}}</p>
-      <div *ngFor="let lang of repo?.node?.language?.edges">
+      <p> <b>{{repo.node.name}} </b></p>
+      <p> <b>Description : </b> {{repo.node.description}} </p>
+      <p> <b>Path : </b> {{repo.node.resourcePath}} </p>
+      <p> Commits : {{repo?.node?.object.history.totalCount}}</p>
+      <div *ngFor="let lang of repo?.node?.languages?.edges">
         <p> Language : {{lang?.node?.name}}</p>
       </div>
     </mat-card>

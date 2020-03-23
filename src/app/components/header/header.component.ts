@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() user;
+  @Input('countRepos') count;
+
   countRepo;
 
   constructor() {
@@ -19,6 +21,7 @@ export class HeaderComponent implements OnInit {
         arrayTemp.push(item.node.object.history.totalCount);
       });
       this.countRepo = arrayTemp.reduce((first, second) => first + second);
+      this.count = this.countRepo;
     }, 1000);
 
   }
