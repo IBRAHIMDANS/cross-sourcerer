@@ -26,6 +26,7 @@ import { RepositoriesComponent } from './components/repositories/repositories.co
 import { FunFactsComponent } from './components/fun-facts/fun-facts.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { DataViewModule } from 'primeng';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { LanguagesComponent } from './components/languages/languages.component';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    ChartModule
+    ChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

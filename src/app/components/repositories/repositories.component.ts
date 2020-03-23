@@ -7,14 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RepositoriesComponent implements OnInit {
   @Input() repositories;
-
   constructor() {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      console.log(this?.repositories);
-    }, 100);
+    console.log(this.repositories);
   }
 
 }
