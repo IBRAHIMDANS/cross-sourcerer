@@ -54,8 +54,6 @@ export class GithubService {
     followers {
       totalCount
     }
-  }
-  repositoryOwner(login: "${username}") {
     repositories(first: 100) {
       totalCount
       edges {

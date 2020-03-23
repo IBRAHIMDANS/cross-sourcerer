@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  gitToken: 'b2f3b9030d35631def815ff52eb86cc9f2c3a317'
+  gitToken: '5d83b58d6eb31e934cbc75248ae082ad190b4dd7'
 };
 
 /*
