@@ -9,24 +9,24 @@
     </div>
   </div>
   <div class="app-user-infos">
-    <mat-card-title>{{user.user.name}}</mat-card-title>
+    <mat-card-title>{{user?.name}}</mat-card-title>
     <div class="app-user-infos-subtitle">
-      <mat-card-subtitle>{{user.user.bio}}</mat-card-subtitle>
-      <mat-card-subtitle>{{user.user.location}}</mat-card-subtitle>
+      <mat-card-subtitle>{{user?.bio}}</mat-card-subtitle>
+      <mat-card-subtitle>{{user?.location}}</mat-card-subtitle>
     </div>
   </div>
   <div class="app-user-details">
-    <mat-card-subtitle>{{user.user.login}}</mat-card-subtitle>
+    <mat-card-subtitle>{{user?.login}}</mat-card-subtitle>
     <div class="app-user-details-subtitle">
-      <img class="avatar-img" mat-card-avatar src="{{user.user.avatarUrl}}" alt="avatar">
+      <img class="avatar-img" mat-card-avatar src="{{user?.avatarUrl}}" alt="avatar">
       <div class="app-user-repos">
         <mat-card class="app-user-container">
           <mat-card-subtitle>Commits</mat-card-subtitle>
-          <mat-card-subtitle>6</mat-card-subtitle>
+          <mat-card-subtitle>{{countRepo}}</mat-card-subtitle>
         </mat-card>
         <mat-card class="app-user-container">
           <mat-card-subtitle>Repos</mat-card-subtitle>
-          <mat-card-subtitle>{{user.user.repositories?.totalCount}}</mat-card-subtitle>
+          <mat-card-subtitle>{{user?.repositories?.totalCount}}</mat-card-subtitle>
         </mat-card>
         <mat-card class="app-user-container">
           <mat-card-subtitle>Lines of Code</mat-card-subtitle>
@@ -34,11 +34,11 @@
         </mat-card>
         <mat-card class="app-user-container">
           <mat-card-subtitle>Followers</mat-card-subtitle>
-          <mat-card-subtitle>{{user.user.following?.totalCount}}</mat-card-subtitle>
+          <mat-card-subtitle>{{user?.following?.totalCount}}</mat-card-subtitle>
         </mat-card>
         <mat-card class="app-user-container">
           <mat-card-subtitle>Followings</mat-card-subtitle>
-          <mat-card-subtitle>{{user.user.followers?.totalCount}}</mat-card-subtitle>
+          <mat-card-subtitle>{{user?.followers?.totalCount}}</mat-card-subtitle>
         </mat-card>
         <mat-card class="app-user-container">
           <mat-card-subtitle>Refresh</mat-card-subtitle>

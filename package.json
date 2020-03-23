@@ -4,8 +4,8 @@
   "license": "MIT",
   "main": "main.ts",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points ",
     "start:electron": "ng build --base-href ./ && electron .",
-    "postinstall": "electron-builder install-app-deps",
     "ng": "ng",
     "start": "npm-run-all -p electron:serve ng:serve",
     "build": "yarn electron:serve-tsc && ng build",

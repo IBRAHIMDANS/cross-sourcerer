@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
 
@@ -34,10 +34,9 @@ export class GithubService {
       });
 
   }
-
   getUSer(username: string): Observable<any> {
     const query = gql`
-  {
+      {
   user(login: "${username}") {
     id
     name
@@ -48,6 +47,15 @@ export class GithubService {
     bio
     websiteUrl
     company
+    organizations(first: 100) {
+      totalCount
+      edges {
+        node {
+          name
+        }
+        cursor
+      }
+    }
     following {
       totalCount
     }
@@ -59,10 +67,14 @@ export class GithubService {
       edges {
         cursor
         node {
+          name
           languages(first: 100) {
-            nodes {
-              color
-              name
+            edges {
+              node {
+                name
+                id
+                color
+              }
             }
             totalCount
           }
@@ -71,14 +83,25 @@ export class GithubService {
             color
             id
           }
-          name
+          object(expression: "master") {
+            ... on Commit {
+              history {
+                totalCount
+                edges {
+                  node {
+                    id
+                    message
+                  }
+                }
+              }
+            }
+          }
+          createdAt
         }
       }
     }
   }
 }
-
-
 `;
     return this.apollo.watchQuery({
       query
