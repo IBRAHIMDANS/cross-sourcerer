@@ -18,10 +18,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {ChartModule} from 'primeng/chart';
 
-import { UserComponent } from './components/user/user.component';
-import { SearchComponent } from './components/search/search.component';
+import { UserComponent } from './pages/user/user.component';
+import { SearchComponent } from './pages/search/search.component';
 import { HeaderComponent } from './components/header/header.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { FunFactsComponent } from './components/fun-facts/fun-facts.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { LanguagesComponent } from './components/languages/languages.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { OverviewComponent } from './components/overview/overview.component';
     SearchComponent,
     UserComponent,
     HeaderComponent,
-    OverviewComponent
+    OverviewComponent,
+    RepositoriesComponent,
+    FunFactsComponent,
+    TechnologiesComponent,
+    LanguagesComponent
   ],
   imports: [
     BrowserModule,

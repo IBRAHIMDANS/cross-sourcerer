@@ -24,10 +24,9 @@ export class UserComponent implements OnInit {
     this.githubService
       .getUSer(this.username)
       .subscribe(({ data }) => {
-        console.log(data);
         return this.user = data.user;
       }, error => {
-        console.log(error);
+        return error;
       });
   }
 

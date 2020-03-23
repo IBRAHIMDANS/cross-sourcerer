@@ -26,3 +26,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   justify-content: center;
   align-items: center;
 }
+.app-component {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}

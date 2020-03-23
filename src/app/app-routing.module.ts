@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SearchComponent } from './components/search/search.component';
-import { UserComponent } from './components/user/user.component';
+import { SearchComponent } from './pages/search/search.component';
+import { UserComponent } from './pages/user/user.component';
 import { AuthGuard } from './guards/auth.guard';
 
 

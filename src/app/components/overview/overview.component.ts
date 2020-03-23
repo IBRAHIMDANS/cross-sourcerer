@@ -13,7 +13,6 @@ export class OverviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.user);
     this.data = {
       labels: ['A', 'B', 'C'],
       datasets: [
