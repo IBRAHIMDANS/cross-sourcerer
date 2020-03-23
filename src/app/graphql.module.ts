@@ -15,7 +15,7 @@ export function createApollo(httpLink: HttpLink) {
   }));
   const auth = setContext((operation, context) => ({
     headers: {
-      Authorization: `Bearer ${environment.gitToken.toString()}`
+      Authorization: `Bearer ${localStorage.getItem('token') ? `${localStorage.getItem('token')}`: environment.gitToken.toString()}`
     },
   }));
 

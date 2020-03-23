@@ -12,6 +12,9 @@ export class SearchComponent implements OnInit {
   usernameFormControl = new FormControl('', [
     Validators.required,
   ]);
+  gitToken = new FormControl('', [
+    Validators.required,
+  ]);
   isLoad = false;
   userStatus = false;
 
@@ -34,7 +37,8 @@ export class SearchComponent implements OnInit {
     this.isLoad = true;
     this.githubService.getUSer(this.usernameFormControl.value).subscribe(({ data }) => {
       this.isLoad = false;
-      return this.router.navigate([ 'user', data.user.login]);
+      localStorage.setItem('token', this.gitToken.value);
+      return this.router.navigate(['user', data.user.login]);
     }, error => {
       this.isLoad = false;
       this.userNotFound();
